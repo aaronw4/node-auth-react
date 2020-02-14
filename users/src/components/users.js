@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {axiosWithAuth} from './axiosWithAuth';
 
-function Helper() {
+function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -29,4 +29,4 @@ function Helper() {
     )
 }
 
-export default Helper
+export default Users
