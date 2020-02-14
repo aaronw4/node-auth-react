@@ -6,7 +6,8 @@ export const axiosWithAuth = () => {
     return axios.create({
         baseURL: 'https://arw-node-auth.herokuapp.com/users',
         headers: {
-            authorization: token
+            username: token.username,
+            password: token.password
         }
     })
 }
