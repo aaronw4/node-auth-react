@@ -10,7 +10,7 @@ class Login extends React.Component {
     };
     
     handleChange = e => {
-        this.state({
+        this.setState({
             credentials: {
                 ...this.state.credentials,
                 [e.target.name]: e.target.value
@@ -22,10 +22,14 @@ class Login extends React.Component {
         e.preventDefault();
 
         axios
-            .post('https://arw-node-auth.herokuapp.com/users/login', this.state.credentials)
+            //.post('https://arw-node-auth.herokuapp.com/users/login', this.state.credentials)
+            .post('http://localhost:5000/users/login', this.state.credentials)
             .then(res => {
-                localStorage.setItem('token', res.data.token);
+                //localStorage.setItem('token', res.data.token);
+                localStorage.setItem('username', this.state.credentials.username);
+                localStorage.setItem('password', this.state.credentials.password);
                 this.props.history.push('/users')
+                console.log(res)
             })
             .catch(err => {
                 console.log(err);

@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {axiosWithAuth} from './axiosWithAuth';
+import axios from 'axios';
 
 function Users() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const getUsers = () => {
-            axiosWithAuth()
-                .get('/')
+            axios
+                .get('http://localhost:5000/users',
+                //.get('https://arw-node-auth.herokuapp.com/users',
+                {withCredentials: true}
+                )
                 .then(res => {
                     setUsers(res.data);
                     console.log(res.data);
