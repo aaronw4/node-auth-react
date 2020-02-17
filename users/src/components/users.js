@@ -7,9 +7,8 @@ function Users() {
     useEffect(() => {
         const getUsers = () => {
             axios
-                .get('http://localhost:5000/users',
-                //.get('https://arw-node-auth.herokuapp.com/users',
-                {withCredentials: true}
+                .get('https://arw-node-auth.herokuapp.com/users',
+                {withCredentials: true}                
                 )
                 .then(res => {
                     setUsers(res.data);
