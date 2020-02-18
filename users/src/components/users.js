@@ -21,7 +21,7 @@ function Users() {
 
     return (
         <div>
-            <h1 className='usersTitle'>Users Page</h1>
+            <h1 className='pageTitle'>Users Page</h1>
             {users.map(user => (
                 <div className='userList' key={user.id}>
                     <p>User: {user.userName}</p>

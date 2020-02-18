@@ -42,10 +42,10 @@ class Login extends React.Component {
         return (
             <div>
                 <Link to='./register'>
-                    <button>Register</button>
+                    <button className='buttonLink'>Register</button>
                 </Link>
                 
-                <h1 className='loginTitle'>Users Log In Page</h1>
+                <h1 className='pageTitle'>Users Log In Page</h1>
 
                 <form onSubmit={this.login}>
                     <input

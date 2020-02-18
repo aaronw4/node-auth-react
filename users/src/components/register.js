@@ -30,9 +30,9 @@ export class Register extends React.Component {
         return (
             <div>
                 <Link to='/'>
-                    <button>Home</button>
+                    <button className='buttonLink'>Home</button>
                 </Link>
-                <h1>Register Page</h1>
+                <h1 className='pageTitle'>Register Page</h1>
                 <form onSubmit={this.register}>
                     <input
                         type='text'

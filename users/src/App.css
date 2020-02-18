@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+.buttonLink {
+  float: left;
+  margin-left: 8%;
+  margin-top: 10px;
+  padding: 10px;
+}
+.pageTitle {
+  padding-top: 60px;
+}
