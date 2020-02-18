@@ -8,7 +8,7 @@ function Users() {
         const getUsers = () => {
             axios
                 .get('https://arw-node-auth.herokuapp.com/users',
-                {withCredentials: true}                
+                    {withCredentials: true}                
                 )
                 .then(res => {
                     setUsers(res.data);
@@ -24,7 +24,7 @@ function Users() {
             <h1 className='usersTitle'>Users Page</h1>
             {users.map(user => (
                 <div className='userList' key={user.id}>
-                    <p>User: {user.name}</p>
+                    <p>User: {user.userName}</p>
                 </div>
             ))}
         </div>

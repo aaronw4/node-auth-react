@@ -22,11 +22,15 @@ class Login extends React.Component {
         e.preventDefault();
 
         axios
-            .post('https://arw-node-auth.herokuapp.com/users/login', this.state.credentials)
+            .post('https://arw-node-auth.herokuapp.com/users/login',                 
+                this.state.credentials,
+                {withCredentials: true}
+            )
             .then(res => {
                 localStorage.setItem('username', this.state.credentials.username);
+                localStorage.setItem('cookie', res.headers)
                 this.props.history.push('/users');
-                console.log(res);
+                console.log(res.headers);
             })
             .catch(err => {
                 console.log(err);
