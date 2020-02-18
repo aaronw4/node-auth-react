@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends React.Component {
@@ -40,6 +41,10 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+                <Link to='./register'>
+                    <button>Register</button>
+                </Link>
+                
                 <h1 className='loginTitle'>Users Log In Page</h1>
 
                 <form onSubmit={this.login}>

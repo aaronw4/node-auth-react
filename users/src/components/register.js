@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 export class Register extends React.Component {
     state = {
@@ -28,6 +29,9 @@ export class Register extends React.Component {
     render() {
         return (
             <div>
+                <Link to='/'>
+                    <button>Home</button>
+                </Link>
                 <h1>Register Page</h1>
                 <form onSubmit={this.register}>
                     <input
