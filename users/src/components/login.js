@@ -1,14 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import cookie from 'react-cookies'
 
 class Login extends React.Component {
     state = {
         credentials: {
             username: '',
             password: ''
-        },
-        cookie: null
+        }
     };
     
     handleChange = e => {
@@ -27,8 +25,6 @@ class Login extends React.Component {
             .post('https://arw-node-auth.herokuapp.com/users/login', this.state.credentials)
             .then(res => {
                 localStorage.setItem('username', this.state.credentials.username);
-                this.setState({cookie: cookie.load('Cookie')});
-                localStorage.setItem('Cookie', this.state.cookie)
                 this.props.history.push('/users');
                 console.log(res);
             })
